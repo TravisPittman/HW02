@@ -119,18 +119,18 @@ string Phone_Directory::remove_entry(const string& name) // Exercise 1.7: please
 	int index = find(name);
 	if (index != -1)
 	{
-		string Removed_number = the_directory[index].get_number();
-
-		for (int i = index; i < size - 1; i++)
+		string Removed_number = the_directory[index].get_number(); 
+		for (int i = index; i <= size - 1; i++) // added <= to for loop so the the loop wasn't skipped when only one entry was there.
 		{
 			the_directory[i] = the_directory[i + 1];
 		}
-		return Removed_number;
+		modified = true;
+		return Removed_number; // returned the number because thats what the book asked for.
+
 
 	}
-	
-	else
 
+	else
 		return "";
 }
 
